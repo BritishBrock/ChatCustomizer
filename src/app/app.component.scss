@@ -4,18 +4,23 @@
     height: 100%;
     display: flex;
     flex-wrap: wrap;
+    .config{
+        flex: 1;
+        min-width: 500px;
+        display: flex;
+        background-color: red;       
+    }
     
+    .chat{
+        min-width: 500px;
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        .sendMessage{
+            height: 100px;
+            width: 100%;
+            background-color: gray;
+        }
+    }
 }
 
-.config{
-    flex: 1;
-    min-width: 500px;
-    display: flex;
-    background-color: red;       
-}
-
-.chat{
-    min-width: 500px;
-    display: flex;
-    flex: 1;
-}

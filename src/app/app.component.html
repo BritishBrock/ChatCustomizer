@@ -39,60 +39,30 @@
   
   
   
-                <div ng-repeat="chatLine in vm.chatLines | filter:vm.isVisible" class="chat-line flex-none"
-                  ng-class="chatLine.classes" flex="none" style="">
+                <div class="chat-line flex-none" flex="none">
   
                   <span class="badges"></span>
   
+                  <span class="username" style="color: rgb(178, 34, 34);"> StarklyPlays </span>
   
-                  <span
-                    class="username" ng-style="{'color': vm.getColor(chatLine)}"
-                    style="color: rgb(178, 34, 34);">
-                    StarklyPlays
-                  </span>
-                    
+                  <span class="colon" style="color: rgb(178, 34, 34);"> : </span>
   
-  
-                    <span class="colon"
-                    ng-style="{'color': vm.getColor(chatLine)}" style="color: rgb(178, 34, 34);">
+                  <span class="message" style="color: inherit;"> <span>test</span> </span>
                   
-                  </span>
+                </div>
   
-                    <span
-                    class="message" ng-bind-html="::trustedHtml(chatLine.message.renderedText)"
-                    ng-style="{'color': chatLine.message.data.isAction?vm.getColor(chatLine):'inherit'}"
-                    style="color: inherit;">
+
+                <div class="chat-line flex-none" flex="none">
   
-                    <span>test</span>
+                  <span class="badges"></span>
   
-                  </span>
+                  <span class="username" style="color: rgb(178, 34, 34);"> StarklyPlays </span>
+  
+                  <span class="colon" style="color: rgb(178, 34, 34);"> : </span>
+  
+                  <span class="message" style="color: inherit;"> <span>test</span> </span>
                   
-                  </div><!---->
-  
-  
-  
-  
-  
-  
-  
-                <div ng-repeat="chatLine in vm.chatLines | filter:vm.isVisible" class="chat-line flex-none"
-                  ng-class="chatLine.classes" flex="none"><!----><span class="badges"><!----> </span><span
-                    class="username" ng-style="{'color': vm.getColor(chatLine)}"
-                    style="color: rgb(178, 34, 34);">StarklyPlays</span><span class="colon"
-                    ng-style="{'color': vm.getColor(chatLine)}" style="color: rgb(178, 34, 34);"></span> <span
-                    class="message" ng-bind-html="::trustedHtml(chatLine.message.renderedText)"
-                    ng-style="{'color': chatLine.message.data.isAction?vm.getColor(chatLine):'inherit'}"
-                    style="color: inherit;"><span>tet</span></span></div><!---->
-                <div ng-repeat="chatLine in vm.chatLines | filter:vm.isVisible" class="chat-line flex-none"
-                  ng-class="chatLine.classes" flex="none"><!----><span class="badges"><!----> </span><span
-                    class="username" ng-style="{'color': vm.getColor(chatLine)}"
-                    style="color: rgb(178, 34, 34);">StarklyPlays</span><span class="colon"
-                    ng-style="{'color': vm.getColor(chatLine)}" style="color: rgb(178, 34, 34);"></span> <span
-                    class="message" ng-bind-html="::trustedHtml(chatLine.message.renderedText)"
-                    ng-style="{'color': chatLine.message.data.isAction?vm.getColor(chatLine):'inherit'}"
-                    style="color: inherit;"><span>test</span></span>
-                  </div><!---->
-  
+                </div>
   
   
               </div>
@@ -101,12 +71,21 @@
           </div>
           </div>
           </div>
-          </div>
+          
+        
+        
+        
+        
+        
+        
+          <div class="sendMessage"></div>
+            <input [(ngModel)]="message" type="text" name="" id=""><button (click)="addMessage()">send</button>
+        </div>
   
 
 
     <div class="config">
-  
+      
     </div>
 
 
