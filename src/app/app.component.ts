@@ -11,10 +11,11 @@ export class AppComponent {
   title = 'ChatCustomizer';
 
   message:string = "";
-    
+  messages:String[] = [];
   addMessage(){
+    this.messages.push(this.message);
+    this.message = "";
 
-    
   }
 
 }

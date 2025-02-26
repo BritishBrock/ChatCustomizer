@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { AppComponent } from './app.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, NgModel } from '@angular/forms';
+import { MessageComponent } from "./message/message.component";
 
 
 
@@ -11,8 +12,9 @@ import { FormsModule, NgModel } from '@angular/forms';
   exports: [],
   imports: [
     BrowserModule,
-    FormsModule
-  ],
+    FormsModule,
+    MessageComponent
+],
   providers: [],
   bootstrap: [AppComponent]
 })
