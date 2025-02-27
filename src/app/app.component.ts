@@ -1,3 +1,4 @@
+import { style } from '@angular/animations';
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { StyleService } from './style.service';
@@ -20,13 +21,13 @@ export class AppComponent {
   ngOnInit(): void {
     this.styleService.stylesListener.subscribe(style=>{
 
-      console.log(style)
+
       Object.entries(style).every(([key1 , value1])=>{
           Object.entries(value1).every(([key2 , value2])=>{
 
               let c:any = document.getElementsByClassName(key1);
               for(let r of c){
-                r.style[key2] = value2 ;
+                r.style.setProperty(key2,value2)
               }
               return true;
           })

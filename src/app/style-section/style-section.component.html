@@ -1,4 +1,4 @@
-@for (section of sections; track $index) {
+<!-- @for (section of sections; track $index) {
   <div class="section">
     <div class="header">
         {{section}}
@@ -18,8 +18,30 @@
         </div>
     }
 </div>
-}
+} -->
+
+<form  [formGroup]="stylesForm">
+  @for(form of stylesForm.controls|keyvalue;track $index){
+    <div class="section">
+      <div class="header">
+        {{form.key}}
+        <button (click)="isOpen[$index] = !isOpen[$index]">close</button>
+      </div>
+      @if (isOpen[$index]) {
+        <div class="styles" >
+
+          <div [formGroupName]="form.key" class="style" *ngFor="let style of form.value.controls| keyvalue;">
+            <div class="style-header">
+              {{style.key}}
+            </div>
+            <div class="style-body">
+              <input  [formControlName]="style.key" type="color" name="" id="">
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  }
+</form>
 
 
-
-<button (click)="updateStyle()">update</button>

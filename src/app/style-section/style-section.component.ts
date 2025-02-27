@@ -2,6 +2,8 @@ import { style } from '@angular/animations';
 import { StyleService } from './../style.service';
 import { Component } from '@angular/core';
 import { MessageComponent } from '../message/message.component';
+import { FormControl, FormGroup } from '@angular/forms';
+import { form } from '../data/form';
 
 @Component({
   selector: 'app-style-section',
@@ -14,18 +16,11 @@ export class StyleSectionComponent {
   constructor(private styleService:StyleService){}
   isOpen:boolean[] = [false,false];
 
-  sections = ["username","message"];
-  mes = MessageComponent;
+  stylesForm = form;
 
-  styles:any = [
-      {
-        "backgroundColor":"",
-        "color":"",
-      },
-      {"color":""}
-    ]
-
-  updateStyle(){
-        this.styleService.addStyle(this.sections,this.styles);
+  ngOnInit(): void {
+    this.stylesForm.valueChanges.subscribe((value)=>{
+      this.styleService.updateStyle(value);
+    })
   }
 }

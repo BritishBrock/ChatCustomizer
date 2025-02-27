@@ -15,19 +15,20 @@ export class StyleService {
      stylesListener:Subject<object> = new Subject();
 
 
-      addStyle(sections:string[],styles:any){
-        for(let i = 0; i < sections.length;i++){
+     updateStyle(styles:any){
 
-          Object.entries(styles[i]).every(([key , value])=>{
-            if (!this.style[sections[i]]) {
-              this.style[sections[i]] = {};
-            }
-            this.style[sections[i]][key] = value as string;
-            return true;
+
+
+       Object.entries(styles).every(([section , stylesObj])=>{
+        Object.entries(stylesObj as Object).every(([styleName , value])=>{
+              if (!this.style[section]) {
+                this.style[section] = {};
+              }
+              this.style[section][styleName] = value as string;
+              return true;
           })
-        }
-
-
+        return true;
+        })
 
         this.stylesListener.next(this.style);
       }
