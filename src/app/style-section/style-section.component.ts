@@ -23,4 +23,6 @@ export class StyleSectionComponent {
       this.styleService.updateStyle(value);
     })
   }
+
+  
 }

@@ -6,12 +6,13 @@ import { FormsModule, NgModel, ReactiveFormsModule } from '@angular/forms';
 import { MessageComponent } from "./message/message.component";
 import { StyleSectionComponent } from './style-section/style-section.component';
 import { InfoComponent } from './info/info.component';
+import { FormInputsComponent } from './form-inputs/form-inputs.component';
 
 
 
 @NgModule({
   declarations: [AppComponent,MessageComponent,
-    StyleSectionComponent,InfoComponent],
+    StyleSectionComponent,InfoComponent, FormInputsComponent],
   exports: [],
   imports: [
     BrowserModule,

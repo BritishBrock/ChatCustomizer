@@ -15,12 +15,12 @@
       @if (isOpen[$index]) {
         <div class="styles" >
 
-          <div [formGroupName]="form.key" class="style" *ngFor="let style of form.value.controls| keyvalue;">
+          <div class="style" *ngFor="let style of form.value.controls| keyvalue;">
             <div class="style-header">
               {{style.key}}
             </div>
             <div class="style-body">
-              <input  [formControlName]="style.key" type="color" name="" id="">
+              <app-form-inputs [formGroupName]="form.key" [formGroup]="stylesForm"  [controlname]="style.key"></app-form-inputs>
             </div>
           </div>
         </div>
