@@ -11,6 +11,10 @@
   <div class="app">
 
     <div class="nav">
+
+      <div class="info" (click)="messageBox = !messageBox">
+        Show Message Box
+      </div>
       <div class="info" (click)="info = !info">
         i
       </div>
@@ -27,7 +31,15 @@
       height: 100%;"><!----><div id="widget-1"
           class="widget se-animation-css animated ui-resizable ui-resizable-disabled ui-draggable ui-draggable-handle ui-draggable-disabled visible ui-flow-2"
           widget="widget" ng-style="widget.css"
-          style="z-index: 2; width: 440.18px; height: 100%; opacity: 1; "><!---->
+          [ngStyle]="!messageBox ? {} :  {'border':'2px dotted black'}"
+          style="
+          z-index: 2;
+           width:
+            440.18px;
+             height: 100%;
+              opacity: 1;
+             "
+          ><!---->
 
           <!----><!----><div widget="widget" style="    display: block;
       height: 100%;"><div background-color="" class="chat-theme custom" ng-style="vm.widget.variables.highlight"
@@ -67,8 +79,9 @@
 
 
 
-          <div class="sendMessage"></div>
-            <input [(ngModel)]="message" type="text" name="" id=""><button (click)="addMessage()">send</button>
+          <div class="sendMessage">
+            <input [(ngModel)]="message" type="text" name="" class="createMessage"><button (click)="addMessage()">send</button>
+          </div>
         </div>
 
 

@@ -17,6 +17,7 @@ export class AppComponent {
   message:string = "";
   messages:String[] = [];
   info:boolean = false;
+  messageBox:boolean = false;
   style?:any;
   ngOnInit(): void {
     this.styleService.stylesListener.subscribe(style=>{
