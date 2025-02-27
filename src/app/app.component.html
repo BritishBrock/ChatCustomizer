@@ -8,10 +8,20 @@
 </head>
 
 <body>
-  <div class="chatCustomizer">
+  <div class="app">
 
+    <div class="nav">
+      <div class="info" (click)="info = !info">
+        i
+      </div>
+      <div class="export" (click)="exportCSS()">
+        Export CSS
+      </div>
+    </div>
+
+  <div class="chatCustomizer">
     <div class="chat">
-      <div class="night">c</div>
+
       <div id="overlay" class="overlay" ng-style="::editor.overlayStyle"
         style="transform: scale(1);     width: 100%;
       height: 100%;"><!----><div id="widget-1"
@@ -71,6 +81,11 @@
 
   </div>
 
+  @if(info){
+    <app-info (infoOut)="closeInfo()"></app-info>
+  }
+
+</div>
 
 
 </body>

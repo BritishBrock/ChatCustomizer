@@ -5,12 +5,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, NgModel, ReactiveFormsModule } from '@angular/forms';
 import { MessageComponent } from "./message/message.component";
 import { StyleSectionComponent } from './style-section/style-section.component';
+import { InfoComponent } from './info/info.component';
 
 
 
 @NgModule({
   declarations: [AppComponent,MessageComponent,
-    StyleSectionComponent],
+    StyleSectionComponent,InfoComponent],
   exports: [],
   imports: [
     BrowserModule,

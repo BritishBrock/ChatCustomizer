@@ -16,11 +16,11 @@ export class AppComponent {
 
   message:string = "";
   messages:String[] = [];
-
-
+  info:boolean = false;
+  style?:any;
   ngOnInit(): void {
     this.styleService.stylesListener.subscribe(style=>{
-
+      this.style = style;
 
       Object.entries(style).every(([key1 , value1])=>{
           Object.entries(value1).every(([key2 , value2])=>{
@@ -41,6 +41,18 @@ export class AppComponent {
     this.messages.push(this.message);
     this.message = "";
 
+  }
+  closeInfo(){
+    this.info = false;
+  }
+
+  exportCSS(){
+    let string = "";
+    Object.entries(this.style).every(([key1 , value1])=>{
+      string += "."+key1 +JSON.stringify(value1) + " "
+      return true;
+    })
+    navigator.clipboard.writeText(string);
   }
 
 
