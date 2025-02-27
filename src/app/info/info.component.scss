@@ -8,8 +8,9 @@
   justify-content: center;
   align-items: center;
   z-index: 999;
-  background-color: rgba(128, 128, 128, 0.555);
+
   animation: example 1s;
+  backdrop-filter: blur(5px);
 
   .infoClose{
     position: absolute;
@@ -17,10 +18,9 @@
     top: 10px;
     background-color: red;
     color: white;
-
     padding: 10px 20px;
     border-radius: 5px;
-
+    border-radius: 10px;
     justify-self: end;
     justify-content: center;
     align-items: center;
@@ -37,14 +37,33 @@
 
     .card{
       width: 500px;
+      border-radius: 10px;
       height: 700px;
       background-color: rgb(59, 59, 59);
+      box-shadow: 15px 15px 10px 1px rgba(0, 0, 0, 0.534);
     display: flex;
     flex-direction: column;
+    position: relative;
+    .number{
+      background-color: red;
+      color: white;
+      width: 50px;
+      height: 50px;
+      position: absolute;
+      left: 50%;
+      top: 0;
+      transform: translate(-50%,-50%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 2em;
+      border-radius: 100%;
+      font-weight: 400;
+    }
       .image{
         width: 500px;
+        border-radius: 10px;
         height: 500px;
-         background-color: rgb(59, 59, 59);
         display: flex;
         justify-content: center;
         align-items: center;
@@ -80,7 +99,7 @@
   left: 0;
   top:0;
   z-index: 999;
-  background-color: rgba(128, 128, 128, 0.555);
+
   animation: example2 1s;
 }
 
