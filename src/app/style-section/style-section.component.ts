@@ -1,5 +1,7 @@
+import { style } from '@angular/animations';
 import { StyleService } from './../style.service';
 import { Component } from '@angular/core';
+import { MessageComponent } from '../message/message.component';
 
 @Component({
   selector: 'app-style-section',
@@ -12,9 +14,18 @@ export class StyleSectionComponent {
   constructor(private styleService:StyleService){}
   isOpen:boolean[] = [false,false];
 
-  test:any;
+  sections = ["username","message"];
+  mes = MessageComponent;
+
+  styles:any = [
+      {
+        "backgroundColor":"",
+        "color":"",
+      },
+      {"color":""}
+    ]
 
   updateStyle(){
-    this.styleService.addStyle("username","color","red");
+        this.styleService.addStyle(this.sections,this.styles);
   }
 }

@@ -1,48 +1,25 @@
-<div class="section">
+@for (section of sections; track $index) {
+  <div class="section">
     <div class="header">
-        Username
-        <button (click)="isOpen[0] = !isOpen[0]">close</button>
+        {{section}}
+        <button (click)="isOpen[$index] = !isOpen[$index]">close</button>
     </div>
-    @if (isOpen[0]) {
+    @if (isOpen[$index]) {
         <div class="styles" >
 
-
-            <div class="style">
-                <div class="style-header">
-                    Font Color
-                </div>
-                <div class="style-body">
-                    <input  [(ngModel)]="test" type="color" name="" id="">
-                </div>
-            </div>
-
-
+            <div class="style" *ngFor="let style of styles[$index] | keyvalue;">
+              <div class="style-header">
+                  {{style.key}}
+              </div>
+              <div class="style-body">
+                  <input  [(ngModel)]="this.styles[$index][style.key+'']" type="color" name="" id="">
+              </div>
+          </div>
         </div>
     }
 </div>
+}
 
 
-<div class="section">
-    <div class="header">
-        Text
-        <button (click)="isOpen[1] = !isOpen[1]">close</button>
-    </div>
-    @if (isOpen[1]) {
-        <div class="styles" >
-
-
-            <div class="style">
-                <div class="style-header">
-                    Font Color
-                </div>
-                <div class="style-body">
-                    <input type="color" name="" id="">
-                </div>
-            </div>
-
-
-        </div>
-    }
-</div>
 
 <button (click)="updateStyle()">update</button>
