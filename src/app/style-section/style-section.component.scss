@@ -1,0 +1,16 @@
+.section{
+    display: flex;
+    flex-direction: column;
+    .header{
+        font-size: 2em;
+    }
+    .styles{
+        display: flex;
+        flex-direction: column;
+        .style{
+            .style-header{
+                font-size: 1.2em;
+            }
+        }
+    }
+}

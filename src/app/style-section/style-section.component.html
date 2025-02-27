@@ -1,0 +1,48 @@
+<div class="section">
+    <div class="header">
+        Username
+        <button (click)="isOpen[0] = !isOpen[0]">close</button>
+    </div>
+    @if (isOpen[0]) {
+        <div class="styles" >
+
+
+            <div class="style">
+                <div class="style-header">
+                    Font Color
+                </div>
+                <div class="style-body">
+                    <input  [(ngModel)]="test" type="color" name="" id="">
+                </div>
+            </div>
+
+
+        </div>
+    }
+</div>
+
+
+<div class="section">
+    <div class="header">
+        Text
+        <button (click)="isOpen[1] = !isOpen[1]">close</button>
+    </div>
+    @if (isOpen[1]) {
+        <div class="styles" >
+
+
+            <div class="style">
+                <div class="style-header">
+                    Font Color
+                </div>
+                <div class="style-body">
+                    <input type="color" name="" id="">
+                </div>
+            </div>
+
+
+        </div>
+    }
+</div>
+
+<button (click)="updateStyle()">update</button>
