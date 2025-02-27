@@ -7,5 +7,14 @@ export var form = new FormGroup({
     }),
     message:new FormGroup({
         color:new FormControl(""),
+    }),
+    colon:new FormGroup({
+        color:new FormControl(""),
+    }),
+    "chat-line":new FormGroup({
+      "background-color":new FormControl(""),
+      "padding":new FormControl(""),
+      "margin":new FormControl(""),
     })
+
   })

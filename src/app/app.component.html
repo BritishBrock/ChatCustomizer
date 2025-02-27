@@ -9,7 +9,7 @@
 
 <body>
   <div class="chatCustomizer">
-    
+
     <div class="chat">
       <div class="night">c</div>
       <div id="overlay" class="overlay" ng-style="::editor.overlayStyle"
@@ -18,60 +18,60 @@
           class="widget se-animation-css animated ui-resizable ui-resizable-disabled ui-draggable ui-draggable-handle ui-draggable-disabled visible ui-flow-2"
           widget="widget" ng-style="widget.css"
           style="z-index: 2; width: 440.18px; height: 100%; opacity: 1; "><!---->
-  
+
           <!----><!----><div widget="widget" style="    display: block;
       height: 100%;"><div background-color="" class="chat-theme custom" ng-style="vm.widget.variables.highlight"
               style="text-align: left; padding: 0px; color: rgb(255, 255, 255); -webkit-text-stroke: 0px rgb(0, 0, 0); font-size: 21px; text-shadow: rgb(0, 0, 0) 0px 0px 3px;">
-  
-  
+
+
               <div class="twitch-chat layout-align-end-start layout-column" style="    box-sizing: border-box;
               display: flex
           ;
               flex-direction: column;
               justify-content: flex-end;" layout="column" layout-align="end start">
-  
-                
-               
-  
+
+
+
+
                 <!---->
                 <!-- This is the comments-->
-  
+
                 @for (message of messages; track $index) {
                   <app-message [message]="message"></app-message>
                 }
 
-  
 
-  
-  
+
+
+
               </div>
-              
+
           </div>
           </div>
           </div>
           </div>
-          
-        
-        
-        
-        
-        
-        
+
+
+
+
+
+
+
           <div class="sendMessage"></div>
             <input [(ngModel)]="message" type="text" name="" id=""><button (click)="addMessage()">send</button>
         </div>
-  
 
 
-    <div class="config">
+
+    <div id="config" class="config">
         <app-style-section></app-style-section>
     </div>
 
 
-    
+
   </div>
 
-    
+
 
 </body>
 
