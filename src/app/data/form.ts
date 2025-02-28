@@ -20,10 +20,7 @@ export var form = new FormGroup({
       "margin":new FormControl(""),
     }),
     "chat-line":new FormGroup({
-      "background-color":new FormControl(""),
-      "padding":new FormControl(""),
-      color:new FormControl(""),
-      "margin":new FormControl(""),
+
     })
 
   })

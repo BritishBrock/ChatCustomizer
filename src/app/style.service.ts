@@ -18,7 +18,7 @@ export class StyleService {
      updateStyle(styles:any){
 
 
-
+      this.style = {};
        Object.entries(styles).every(([section , stylesObj])=>{
         Object.entries(stylesObj as Object).every(([styleName , value])=>{
               if (!this.style[section]) {
