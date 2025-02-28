@@ -1,6 +1,6 @@
-<button>left </button>
-<button>right</button>
-<button> top </button>
-<button>bottom</button>
+<button (click)="direction = 0">top </button>
+<button (click)="direction = 1">right</button>
+<button (click)="direction = 2"> bottom </button>
+<button (click)="direction = 3">left</button>
 <br>
-<input [formControl]="control">
+<input [(ngModel)]="directionValues[direction]" (change)="update()">
