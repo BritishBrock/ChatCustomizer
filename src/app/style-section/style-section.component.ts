@@ -3,7 +3,7 @@ import { StyleService } from './../style.service';
 import { Component } from '@angular/core';
 import { MessageComponent } from '../message/message.component';
 import { FormControl, FormGroup } from '@angular/forms';
-import { form } from '../data/form';
+import { form, formComponents } from '../data/form';
 
 @Component({
   selector: 'app-style-section',
@@ -17,12 +17,12 @@ export class StyleSectionComponent {
   isOpen:boolean[] = [false,false];
 
   stylesForm = form;
-
+  typeMap = formComponents;
   ngOnInit(): void {
     this.stylesForm.valueChanges.subscribe((value)=>{
       this.styleService.updateStyle(value);
     })
   }
 
-  
+
 }

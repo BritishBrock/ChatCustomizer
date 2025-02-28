@@ -20,7 +20,17 @@
               {{style.key}}
             </div>
             <div class="style-body">
-              <app-form-inputs [formGroupName]="form.key" [formGroup]="stylesForm"  [controlname]="style.key"></app-form-inputs>
+                    @switch (typeMap[style.key]) {
+                      @case ("text") {
+                       <app-text  [formGroupName]="form.key" [formGroup]="stylesForm"  [controlname]="style.key"></app-text>
+                      }
+                      @case ("color") {
+                        <app-color  [formGroupName]="form.key" [formGroup]="stylesForm"  [controlname]="style.key"></app-color>
+                      }
+                      @case ("multi") {
+                        <app-multi [formGroupName]="form.key" [formGroup]="stylesForm"  [controlname]="style.key"></app-multi>
+                      }
+                    }
             </div>
           </div>
         </div>

@@ -33,6 +33,6 @@ export var form = new FormGroup({
   export var formComponents:any = {
     "color":"color",
     "background-color":"color",
-    "margin":"text",
+    "margin":"multi",
     "padding":"text",
   }
