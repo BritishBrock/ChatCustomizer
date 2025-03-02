@@ -2,6 +2,7 @@ import { style } from '@angular/animations';
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { StyleService } from './style.service';
+import { styleI } from './interfaces/style';
 
 @Component({
   selector: 'app-root',
@@ -18,11 +19,14 @@ export class AppComponent {
   messages:String[] = [];
   info:boolean = false;
   messageBox:boolean = false;
+  toLoadIn:any;
   style?:any;
+  styles?:styleI[];
   ngOnInit(): void {
+    this.styleService.loadCSS();
+    this.styles = this.styleService.styles;
     this.styleService.stylesListener.subscribe(style=>{
       this.style = style;
-
       Object.entries(style).every(([key1 , value1])=>{
           Object.entries(value1).every(([key2 , value2])=>{
 
@@ -37,7 +41,10 @@ export class AppComponent {
 
     })
   }
-
+  loadStyle(){
+    if(!this.styles || this.styles.length == 0) return;
+    this.styleService.updateStyle(this.styles![this.toLoadIn]);
+  }
   addMessage(){
     this.messages.push(this.message);
     this.message = "";
@@ -54,6 +61,10 @@ export class AppComponent {
       return true;
     })
     navigator.clipboard.writeText(string);
+  }
+
+  saveCSS(){
+    this.styleService.saveCSS();
   }
 
 

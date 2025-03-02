@@ -13,11 +13,9 @@ export class StyleService {
 
      style:styleI = {};
      stylesListener:Subject<object> = new Subject();
-
+     styles:styleI[] = [];
 
      updateStyle(styles:any){
-
-
       this.style = {};
        Object.entries(styles).every(([section , stylesObj])=>{
         Object.entries(stylesObj as Object).every(([styleName , value])=>{
@@ -33,4 +31,14 @@ export class StyleService {
         this.stylesListener.next(this.style);
       }
 
+
+      saveCSS(){
+        this.styles.push(this.style);
+        localStorage.setItem("styles",JSON.stringify(this.styles));
+      }
+      loadCSS(){
+        let json = localStorage.getItem("styles") ?? "";
+        if(json == "")return;
+        this.styles = JSON.parse(json)
+      }
 }

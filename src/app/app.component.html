@@ -21,6 +21,17 @@
       <div class="export" (click)="exportCSS()">
         Export CSS
       </div>
+      <div class="export" (click)="saveCSS()">
+        Save CSS
+      </div>
+      <select [(ngModel)]="toLoadIn"  name="" id="">
+        @for (item of styles; track $index) {
+          <option [value]="$index">style {{$index}}</option>
+        }
+      </select>
+      <div class="info" (click)="loadStyle()">
+        Load
+      </div>
     </div>
 
   <div class="chatCustomizer">
