@@ -1,4 +1,4 @@
-const cssProperties = [
+export const cssProperties = [
   "align-content",
   "align-items",
   "align-self",

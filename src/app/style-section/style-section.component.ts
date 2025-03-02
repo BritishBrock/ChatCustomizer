@@ -4,6 +4,7 @@ import { Component } from '@angular/core';
 import { MessageComponent } from '../message/message.component';
 import { FormArray, FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { form, formComponents } from '../data/form';
+import { cssProperties } from '../data/cssstyles';
 
 @Component({
   selector: 'app-style-section',
@@ -17,6 +18,8 @@ export class StyleSectionComponent {
   isOpen:boolean[] = [false,false];
 
   stylesForm = form;
+  cssProprties = cssProperties;
+  cssSelected?:string;
   typeMap = formComponents;
   ngOnInit(): void {
 
@@ -28,11 +31,14 @@ export class StyleSectionComponent {
   }
 
   addStyle(group:string){
-   let f = this.stylesForm.get(group) as FormGroup;
-    f.addControl("color",new FormControl(""));
+   if(!this.cssSelected)return;
+    let f = this.stylesForm.get(group) as FormGroup;
+
+    f.addControl(this.cssSelected,new FormControl(""));
 
 
 
   }
+
 
 }

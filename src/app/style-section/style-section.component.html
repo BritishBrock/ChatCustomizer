@@ -34,6 +34,11 @@
             </div>
           </div>
         </div>
+        <select [ngModelOptions]="{standalone: true}" [(ngModel)]="cssSelected" name="" id="">
+          @for(items of cssProprties;track $index){
+            <option [value]="items">{{items}}</option>
+          }
+        </select>
         <button (click)="addStyle(form.key)">Add Style +</button>
       }
     </div>
