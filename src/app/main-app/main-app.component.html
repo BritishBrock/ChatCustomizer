@@ -1,0 +1,106 @@
+
+<div class="app">
+
+  <div class="nav">
+
+    <div class="info" (click)="messageBox = !messageBox">
+      Show Message Box
+    </div>
+    <div class="info" (click)="info = !info">
+      Info
+    </div>
+    <div class="export" (click)="exportCSS()">
+      Export CSS
+    </div>
+    <div class="export" (click)="saveCSS()">
+      Save CSS
+    </div>
+    <select [(ngModel)]="toLoadIn"  name="" id="">
+      @for (item of styles; track $index) {
+        <option [value]="$index">style {{$index}}</option>
+      }
+    </select>
+    <div class="info" (click)="loadStyle()">
+      Load
+    </div>
+    <div class="info" (click)="deleteStyles()">
+      delete CSS
+    </div>
+  </div>
+
+<div class="chatCustomizer">
+  <div class="chat">
+
+    <div id="overlay" class="overlay" ng-style="::editor.overlayStyle"
+      style="transform: scale(1);     width: 100%;
+    height: 100%;"><!----><div id="widget-1"
+        class="widget se-animation-css animated ui-resizable ui-resizable-disabled ui-draggable ui-draggable-handle ui-draggable-disabled visible ui-flow-2"
+        widget="widget" ng-style="widget.css"
+        [ngStyle]="!messageBox ? {} :  {'border':'2px dotted black'}"
+        style="
+        z-index: 2;
+         width:
+          440.18px;
+           height: 100%;
+            opacity: 1;
+           "
+        ><!---->
+
+        <!----><!----><div widget="widget" style="    display: block;
+    height: 100%;"><div background-color="" class="chat-theme custom" ng-style="vm.widget.variables.highlight"
+            style="text-align: left; padding: 0px; color: rgb(255, 255, 255); -webkit-text-stroke: 0px rgb(0, 0, 0); font-size: 21px; text-shadow: rgb(0, 0, 0) 0px 0px 3px;">
+
+
+            <div class="twitch-chat layout-align-end-start layout-column" style="    box-sizing: border-box;
+            display: flex
+        ;
+            flex-direction: column;
+            justify-content: flex-end;" layout="column" layout-align="end start">
+
+
+
+
+              <!---->
+              <!-- This is the comments-->
+
+              @for (message of messages; track $index) {
+                <app-message [message]="message"></app-message>
+              }
+
+
+
+
+
+            </div>
+
+        </div>
+        </div>
+        </div>
+        </div>
+
+
+
+
+
+
+
+        <div class="sendMessage">
+          <input [(ngModel)]="message" type="text" name="" class="createMessage"><button (click)="addMessage()">send</button>
+        </div>
+      </div>
+
+
+
+  <div id="config" class="config">
+      <app-style-section></app-style-section>
+  </div>
+
+
+
+</div>
+
+@if(info){
+  <app-info (infoOut)="closeInfo()"></app-info>
+}
+
+</div>
