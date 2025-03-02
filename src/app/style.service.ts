@@ -41,4 +41,9 @@ export class StyleService {
         if(json == "")return;
         this.styles = JSON.parse(json)
       }
+      deleteStyles(){
+        this.styles = [];
+        localStorage.setItem("styles",JSON.stringify(this.styles));
+        return [];
+      }
 }

@@ -50,6 +50,9 @@ export class AppComponent {
     this.message = "";
 
   }
+  deleteStyles(){
+    this.styles = this.styleService.deleteStyles();
+  }
   closeInfo(){
     this.info = false;
   }
