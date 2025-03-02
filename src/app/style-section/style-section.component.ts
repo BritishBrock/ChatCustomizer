@@ -22,10 +22,7 @@ export class StyleSectionComponent {
   cssSelected?:string;
   typeMap = formComponents;
   ngOnInit(): void {
-
-
     this.stylesForm.valueChanges.subscribe((value)=>{
-
       this.styleService.updateStyle(value);
     })
   }
@@ -33,11 +30,12 @@ export class StyleSectionComponent {
   addStyle(group:string){
    if(!this.cssSelected)return;
     let f = this.stylesForm.get(group) as FormGroup;
-
     f.addControl(this.cssSelected,new FormControl(""));
-
-
-
+  }
+  removeStyle(group:string,style:string){
+    let f = this.stylesForm.get(group) as FormGroup;
+    f.controls[style].patchValue("");
+    f.removeControl(style);
   }
 
 
