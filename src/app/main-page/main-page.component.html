@@ -8,24 +8,157 @@
 <body>
 
   <div class="section">
-      
+    <div class="left">
+      <p class="text">
+          This is the start of a lovely text ewf wef wef wef wef wef wef wef wef weewf wef we fewf we
+          This is the start of a lovely text ewf wef wef wef wef wef wef wef wef weewf wef we fewf we
+          This is the start of a lovely text ewf wef wef wef wef wef wef wef wef weewf wef we fewf we
+          <br>
+          <br>
+          This is the start of a lovely text ewf wef wef wef wef wef wef wef wef weewf wef we fewf we
+          This is the start of a lovely text ewf wef wef wef wef wef wef wef wef weewf wef we fewf we
+          This is the start of a lovely text ewf wef wef wef wef wef wef wef wef weewf wef we fewf we
+          <br>
+          <br>
+          This is the start of a lovely text ewf wef wef wef wef wef wef wef wef weewf wef we fewf we
+          This is the start of a lovely text ewf wef wef wef wef wef wef wef wef weewf wef we fewf we
+          This is the start of a lovely text ewf wef wef wef wef wef wef wef wef weewf wef we fewf we
+
+
+      </p>
+    </div>
+    <div class="right">
+      <div class="goToAppButton bclick" [routerLink]="['/app']" routerLinkActive="app" >
+        Create Chat
+      </div>
+    </div>
 
   </div>
+  <div class="section2 info">
+    <svg class="diagonal" preserveAspectRatio="none" viewBox="0 0 100 100" > <polygon points="0 0, 300 200, 300 0" fill="#119DA4"></polygon></svg>
+    <div class="header">
+      Guide
+    </div>
 
-  <div class="section2">
-    <svg class="diagonal" preserveAspectRatio="none" viewBox="0 0 100 100" > <polygon points="0 0, 300 200, 300 0" fill="#0C7489"></polygon></svg>
 
-
+  <div class="infopanel" >
+    <div class="cards">
+      <div class="card">
+          <div class="number">
+            1
+          </div>
+          <div class="image">
+            <img src="test.png" alt="">
+          </div>
+          <div class="text">
+            Create style using the settings
+          </div>
+      </div>
+      <div class="card">
+        <div class="number">
+          2
+        </div>
+        <div class="image">
+          <img src="test2.png" alt="">
+        </div>
+        <div class="text">
+          press the export css button
+        </div>
+    </div>
+    <div class="card">
+      <div class="number">
+        3
+      </div>
+      <div class="image">
+        <img src="test3.png" alt="">
+      </div>
+      <div class="text">
+        go to obs click on your source media and copy paste the generated css into the custom css area
+      </div>
   </div>
-  <div class="section">
+  </div>
+</div>
+  </div>
+  <div class="section info">
     <svg class="diagonal" preserveAspectRatio="none" viewBox="0 0 100 100" >   <polygon points="0 0, 300 200, 300 0" fill="#D7D9CE"></polygon> </svg>
+    <div class="header">
+      Templates
+    </div>
+   <h2>
+     Pick a style you would like to test out
+  </h2>
 
+     <div class="examples">
+
+      <div class="style-left">
+        <div class="button bclick" (click)="loadStyle(-1)">
+          <
+
+        </div>
+      </div>
+      <div class="style-center">
+
+
+
+        @for (item of [0,1,2,3,4,5]; track $index) {
+
+          <div class="chat-line flex-none" flex="none">
+
+            <span class="badges"></span>
+
+            <span class="username"> UserName </span>
+
+            <span class="colon"> : </span>
+
+            <span class="message"> <span>Test</span> </span>
+
+          </div>
+        }
+
+
+
+
+        <div class="gotostyle">
+          <div class="goToAppButton bclick" [routerLink]="['/app']" routerLinkActive="app" >
+            Use Style
+          </div>
+        </div>
+
+      </div>
+      <div class="style-right">
+        <div class="button bclick" (click)="loadStyle(1)">
+          >
+
+        </div>
+      </div>
+
+
+    </div>
 
   </div>
-  <div class="half">
-    <svg class="diagonal" preserveAspectRatio="none" viewBox="0 0 100 100" >  <polygon points="0 0, 300 200, 300 0" fill="#0C7489"></polygon> </svg>
+  <div class="half ">
+    <svg class="diagonal" preserveAspectRatio="none" viewBox="0 0 100 100" >  <polygon points="0 0, 300 200, 300 0" fill="#119DA4"></polygon> </svg>
+    <div class="header">
+      Contact
+    </div>
+    <div class="form">
+      <div class="left">
+        email
+        <input type="email" name="" id="">
+        Name
+        <input type="text" name="" id="">
+        Subject
+        <input type="text" name="" id="">
+        Message
+        <textarea name="" id=""></textarea>
 
+        <div class="goToAppButton bclick"  >
+          send
+        </div>
 
+      </div>
+
+    </div>
 
 
   </div>
